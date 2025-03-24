@@ -1,9 +1,10 @@
-// Hamburger menu functionality
-const hamburger = document.getElementById('hamburger');
+// Hamburger Menu Toggle
+const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active');  // Toggle 'active' class to show/hide nav
+    hamburger.classList.toggle('active'); // Add class to change hamburger icon
 });
 
 // Carousel functionality
@@ -12,10 +13,35 @@ const slides = document.querySelectorAll('.carousel-slide');
 const totalSlides = slides.length;
 
 function changeSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    const offset = -currentSlide * 100;
-    document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+    slides.forEach((slide, index) => {
+        slide.style.display = 'none'; // Hide all slides
+    });
+
+    currentSlide = (currentSlide + 1) % totalSlides; // Move to next slide, loop around
+    slides[currentSlide].style.display = 'block'; // Show current slide
 }
 
-// Change slides every 3 seconds
+// Automatically change slides every 3 seconds
 setInterval(changeSlide, 3000);
+
+// Initially display the first slide
+slides.forEach((slide, index) => {
+    if (index !== currentSlide) {
+        slide.style.display = 'none';
+    }
+});
+
+// Search Functionality
+const searchBtn = document.getElementById('search-btn');
+const searchInput = document.getElementById('search');
+
+searchBtn.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query) {
+        console.log('Searching for:', query);
+        // Implement search logic here
+        // You can use the query to filter products or redirect to a search results page
+    } else {
+        console.log('Please enter a search term');
+    }
+});
