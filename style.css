@@ -39,18 +39,25 @@ header {
 }
 
 /* Hide the navigation links by default on mobile */
-.nav-links {
+/* .nav-links {
     display: none;
-}
-
+} */
+/* 
 .nav-links li {
     margin-left: 20px;
-}
+} */
 
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    margin-left: 60px;
+    padding: 0.1px;
+}
+
+.navbar .nav-links a:hover {
+    background-color: rgb(223, 22, 22);
+    cursor: pointer;
 }
 
 .search-container {
@@ -63,6 +70,10 @@ header {
     font-size: 16px;
     border: none;
     border-radius: 5px;
+    padding: 8px;
+}
+#search:hover{
+    background-color: #f1ecec;
 }
 
 #search-btn {
@@ -73,6 +84,11 @@ header {
     cursor: pointer;
     border-radius: 5px;
 }
+
+#search-btn:hover {
+    background-color: #e61717;
+}
+
 
 #search-btn i {
     color: #fff;
@@ -136,6 +152,9 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.product:hover{
+    background-color: #c5c1c1;
+}
 
 .product img {
     width: 100%;
@@ -149,16 +168,54 @@ header {
     font-weight: bold;
 }
 
+/*vedio*/
+#myVideo {
+    /* position: fixed; */
+    /* right: 0;
+    bottom: 0; */
+    /* min-width: 10%; 
+    min-height: 10%;*/
+    width:100%;
+  }
+  .content h1{
+    color: #333;
+  }
+  .content {
+    /* position: fixed; */
+    bottom: 0;
+    background: rgba(243, 237, 237, 0.5);
+    color: #130303;
+    width: 100%;
+    padding: 0px;
+  }
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #1d0101;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+
 /* Contact Section */
 .contact {
     padding: 60px 20px;
-    background-color: #fff;
+    background-color: #918e8e;
 }
 
 .contact h1,
 .contact h3 {
     text-align: center;
     margin-bottom: 20px;
+    color: #130303;
 }
 
 .contact p {
@@ -209,6 +266,10 @@ header {
     border-radius: 5px;
 }
 
+#message:hover{
+    background-color: #130303;
+    cursor: pointer;
+}
 /* Contact Details Section */
 #teacher {
     padding: 60px 20px;
@@ -319,5 +380,15 @@ header {
 
     #shop .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    #search-btn:hover,
+    #search-btn:focus,
+    #myBtn:hover,
+    #myBtn:focus,
+    .product:hover,
+    .product:focus {
+        background-color: #e61717; /* Example color on focus */
+        color: #fff; /* Adjust color on focus */
     }
 }
